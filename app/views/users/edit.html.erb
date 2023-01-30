@@ -1,0 +1,9 @@
+<h2>登録変更</h2>
+<%= form_with model:@user,local:true do |f| %>
+  <h4>名前</h4>
+  <p><%= f.text_field:name %></p>
+  <h4>パスワード</h4>
+  <p><%= f.text_field:password %></p><br>
+  </p><br>
+  <%= f.submit '登録変更' %>
+<% end %> 

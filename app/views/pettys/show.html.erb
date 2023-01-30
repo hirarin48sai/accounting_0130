@@ -1,0 +1,62 @@
+<div class="container"> 
+ <div class="row">
+  <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <h2>出金伝票</h2>
+      <%= @petty.day %>
+      <table class='table table-hover table-inverse'>
+      <thead>
+       <tr>
+         <td></td>
+         <td>申請者名</td>
+         <td><%= current_user.name %></td>
+       </tr>
+       <tr>
+         <td></td>
+         <td>配属部署</td>
+         <td><%= @petty.section %></td>
+       </tr>
+       <tr>
+         <th>勘定科目</th>
+         <th>摘要</th>
+         <th>金額</th>
+      
+       </tr>
+     </thead>
+     <tbody>
+         <tr>
+           <td><%= @petty.category %></td>
+           <td><%= @petty.breakdown_1 %></td>
+           <td><%= @petty.money_1 %></td>
+         </tr>
+         <tr>
+           <td><%= @petty.category %></td>
+           <td><%= @petty.breakdown_2 %></td>
+           <td><%= @petty.money_2 %></td>
+         </tr>  
+         <tr>
+           <td><%= @petty.category %></td>
+           <td><%= @petty.breakdown_3 %></td>
+           <td><%= @petty.money_3 %></td>
+         </tr>
+         <tr>
+           <td>仮払消費税等</td>
+           <td></td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>合計</td>
+           <th></td>
+           <td><%= @petty.total_money %></td>
+         </tr>
+      </tbody>
+     </table>
+     <%= link_to '編集',edit_petty_path(@petty.id)%>
+      /
+     <%= link_to '削除',petty_path(@petty.id),method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      /
+     <%= link_to '戻る',user_path(current_user.id) %>
+    </div>
+    <div class="col-lg-2"></div>
+ </div>
+</div>

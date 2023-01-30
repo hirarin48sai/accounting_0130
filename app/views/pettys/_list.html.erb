@@ -1,0 +1,23 @@
+<%= form_with model:@petty,url:pettys_path,local:true do |f| %>
+  <h4>部署名</h4>
+  <p><%= f.text_field:section %></p>
+  <h4>経費選択</h4>
+  <p><%= f.text_field:category %></p>
+  <h4>日付</h4>
+  <p><%= f.date_field:day %></p><br>
+  <p>
+    明細1:<%= f.text_field:breakdown_1 %>
+    明細1の金額:<%= f.number_field:money_1,value:0,required: true %>
+  </p>
+  <p>
+    明細2:<%= f.number_field:breakdown_2 %>
+    明細2の金額:<%= f.number_field:money_2,value:0,required: true %>
+  </p>
+  <p>
+    明細3:<%= f.number_field:breakdown_3 %>
+    明細3の金額:<%= f.number_field:money_3,value:0,required: true %>
+  </p><br>
+  <%= f.submit '登録' %>
+<% end %>
+
+

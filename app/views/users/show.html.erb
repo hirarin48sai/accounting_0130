@@ -1,0 +1,39 @@
+<div class=container>
+  <div class="row">
+    <div class="col-lg-3">
+       <h2>ユーザー情報</h2>
+       <p>ユーザー名:<%= @user.name %></p>
+       <p>所属部署:<%=  %></p><br>
+       <%= link_to 'ユーザー情報変更',edit_user_path(@user),class:"btn btn-secondary" %>
+    </div>
+    <div class="col-lg-1"></div>
+    
+    <div class="col-lg-8">
+     <h2>伝票一覧</h2>
+     <table class='table table-hover table-inverse'>
+      <thead>
+       <tr>
+         <th>申請者</th>
+         <th>日付</th>
+         <th>経費</th>
+         <th>金額</th>
+       </tr>
+     </thead>
+     <tbody>
+      <% @user.pettys.each do |petty|%>
+         <tr>
+           <td><%= petty.user.name %></td>
+           <td><%= petty.day %></td>
+           <td><%= petty.category %></td>
+           <td><%= petty.total_money %></td>
+           <td><%= link_to '伝票画面へ',petty_path(petty.id),class:"btn btn-info"%></td>
+         </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+ </div>
+</div>
+
+
+

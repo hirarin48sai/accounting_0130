@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  category: MyString
+  section: MyString
+  day: 2023-01-18
+  breakdown_1: MyString
+  breakdown_2: MyString
+  breakdown_3: MyString
+  money_1: 1
+  money_2: 1
+  money_3: 1
+  total_money: 1
+
+two:
+  user_id: 1
+  category: MyString
+  section: MyString
+  day: 2023-01-18
+  breakdown_1: MyString
+  breakdown_2: MyString
+  breakdown_3: MyString
+  money_1: 1
+  money_2: 1
+  money_3: 1
+  total_money: 1
